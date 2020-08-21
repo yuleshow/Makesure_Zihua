@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 # Input file:           ../TXT/ORIGIN-G_JFY.txt
+# Output file:          ../TXT/G_JFY-table.csv
 
 use Encode;
 use Encode qw(encode decode);
@@ -14,6 +15,10 @@ use open ":std", ":encoding(UTF-8)";
 my $input_file = "../TXT/ORIGIN-G_JFY.txt";
 
 open (INPUT_FILE, '<', $input_file);
+
+my $output_file = "../TXT/G_JFY-table.csv";
+open (OUTPUT_FILE, '>', $output_file); 
+
 while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s/\r|\n//g;
@@ -57,8 +62,8 @@ while (<INPUT_FILE>) {
     }
 
     
-        print "$g_modifier$g_number:$g_jian:$g_fan:$g_yi";
-        print "\n";
+        print OUTPUT_FILE "$g_modifier$g_number:$g_jian:$g_fan:$g_yi\n";
+
     
 
     $last_number= $g_number;
@@ -69,31 +74,4 @@ while (<INPUT_FILE>) {
 
 
 close (INPUT_FILE);
-
-# print $temp;
-
-# @output_chars=split(undef, $temp);
-
-
-
-# $i=1;
-# foreach (@output_chars) {
-#     print "B0";
-
-
-#     if ($i<1000) {
-#         print "0";
-#     }
-
-#     if ($i<100) {
-#         print "0";
-#     }
-#     if ($i<10) {
-#        print "0";
-#     }
-        
-#     print $i.":".$_;
-#     print "\n";
-#     $i++;
-# }
-
+close (OUTPUT_FILE);

@@ -131,7 +131,9 @@ A-index-GEN.pl | ORIGIN-A.csv | A-index.csv
 B-index-GEN.pl | ORIGIN-B.txt | B-index.csv
 G-index-GEN.pl | ORIGIN-G.txt | G-index.csv
 A_ZJF-GEN.pl   | ORIGIN-A_ZJF.txt | A_ZJF-unidexed.csv
-A_ZJF-index.pl | A_ZJF-unidexed.csv A-index.csv | A_ZJF-index.csv
+A_ZJF-index.pl | A_ZJF-unidexed.csv<br />A-index.csv | A_ZJF-index.csv
+G_JFY-GEN.pl   | ORIGIN-G_JFY.txt | G_JFY-table.csv
+G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
 
 
 
