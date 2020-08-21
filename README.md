@@ -118,4 +118,3 @@ ODS檔，直接用Libre打開 TXT/G-JF-table.txt 另存
 ODS文檔
 位置:           References
 文件名:         整合_中華人民共和國8105個常用規範漢字-全簡繁異表-8105字.ods
-
