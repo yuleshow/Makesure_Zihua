@@ -51,7 +51,7 @@ PDF檔<br />
 文件名:         官方_中華人民共和國_通用規範漢字表.pdf<br />
 原下載網址:     http://www.moe.gov.cn/publicfiles/business/htmlfiles/moe/cmsmedia/other/2013/7/other98742.zip<br />
 <br />
-<h4>2.3.1 文字版</h4>
+<h4>2.3.2 文字版</h4>
 由於未找到文字版官方文件，採用維基文庫，copy/paste 三級字庫文字部分，存於ORIGIN-G，8105字共8175行，用perl/G-index-GEN.pl 整理<br />
 <br />
 ODS檔<br />
@@ -67,7 +67,7 @@ TXT檔<br />
 ##3.1 中華民國教育部 標準字與簡化字對照手冊 2011年9月
 https://ws.moe.edu.tw/001/Upload/userfiles/%E6%A8%99%E6%BA%96%E5%AD%97%E5%B0%8D%E7%85%A7%E7%B0%A1%E5%8C%96%E5%AD%97.pdf<br />
 說明：          这個對照表其實衹有A表即《常用字4808字》與正體與簡化字的對照<br />
-<h3>3.1.1 文件
+<h3>3.1.1 文件</h3>
 PDF檔<br />
 位置:           於References下<br />
 文件名:         官方_中華民國教育部-標準字對照簡化字.pdf<br />
