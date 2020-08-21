@@ -2,14 +2,14 @@
 梅玺阁字话，又名《包学包会写繁体》
 -----------------------------------
 
-1. 源起
+1. ##源起
    大陸與臺灣，分別牽涉到三套字體（形），分別是簡體、繁體和正體，也分別有簡繁體、正簡體（不是簡正體）的對照表，然而繁體與正體的對照，始終沒有打通，目前有一表格、文章，是網友們自行整理的，不是很規範也不全，本計劃着眼於从兩岸「官方」文件中整合出一個快速檢閱查找的方法來。
 
-2. 官方字表
-2.1 中華民國教育部 4808 個常用字說明 民國71年（1982年）9月1日
-中華民國教育部官方入口: https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46
-https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97%E8%AA%AA%E6%98%8E.pdf
-2.1.1 常用國字標準字體表（A表）
+1. ##官方字表
+   1. ###中華民國教育部 4808 個常用字說明 民國71年（1982年）9月1日
+      中華民國教育部官方入口: https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46 <br />
+      https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97%E8%AA%AA%E6%98%8E.pdf
+      1. #### 常用國字標準字體表（A表）
 PDF檔
 位置:           於References下
 文件名:         官方_中國民國教育部4808個常用字.pdf
@@ -28,9 +28,9 @@ TXT/ORIGIN-A.csv
 中華民國標準字體查詢各字體入口（含A表、B表）:   https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&thirdclassify_sn=475&content_sn=8
 相關維基文庫:   https://zh.m.wikisource.org/zh-hant/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8
 
-2.2 次常用國字標準字體表（B表）
+     1. 次常用國字標準字體表（B表）
 中華民國標準字體查詢各字體入口（含A表、B表）:   https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&thirdclassify_sn=475&content_sn=8  (同2.1.1)
-2.2.1 完整表格
+     1. 完整表格
       雖然有2.2提及的查詢入口，但至今沒有找到如2.1.1中那樣現成的官方PDF或電子表格，亦沒有找到象A表那樣官方的「教育部字號」
 2.2.1.2 借用表格
 借用網友表格，出處: https://sites.google.com/site/jzweon/list/chart-of-standard-forms-of-less-than-common-national-characters
