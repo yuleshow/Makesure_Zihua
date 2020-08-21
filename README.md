@@ -66,7 +66,7 @@ TXT檔<br />
 <h2>3. 簡繁正對照</h2>
 <h3>3.1 中華民國教育部 標準字與簡化字對照手冊 2011年9月</h3>
 https://ws.moe.edu.tw/001/Upload/userfiles/%E6%A8%99%E6%BA%96%E5%AD%97%E5%B0%8D%E7%85%A7%E7%B0%A1%E5%8C%96%E5%AD%97.pdf<br />
-說明：          这個對照表其實衹有A表即《常用字4808字》與正體與簡化字的對照<br />
+說明：          这個對照表其實衹有A表即《常用字4808字》與正體與簡化字的對照，所以相關文件名均以A表處理<br />
 <h4>3.1.1 文件</h4>
 PDF檔<br />
 位置:           於References下<br />
@@ -74,7 +74,7 @@ PDF檔<br />
 <br />
 ODS檔<br />
 此ODS檔由全文複製上列PDF檔後，取第6頁至第90頁內容，去掉空格後，再由emacs用replace-regexp替換而成，如下： <br />
-Replace regexp (default 【[0-9]+ 畫】<br />
+```Replace regexp (default 【[0-9]+ 畫】<br />
  → ): <br />
 Replace regexp (default [0-9]+ 畫～ [0-9]+ 畫<br />
  → ):<br />
@@ -84,24 +84,31 @@ Replace regexp (default 標準字對照簡化字表<br />
  → ):<br />
 Replace regexp (default [0-9]+ 畫<br />
  → ):<br />
-替換後，剩4810行，其中「鍾」「蘋」各佔二行<br />
+替換後，剩4810行，其中「鍾」「蘋」各佔二行<br />// emacs_lisp```
 <br />
 -----以上emacs手工，太慢，以下perl大法 -----<br />
 將PDF全文複製並保留「- 6 -」至「- 91 -」之間，共5097行，保存至TXT/ORIGIN-A_ZJF.txt<br />
 用perl/A_ZJF-GEN.pl直接生成TXT/A_ZJF-unindexed.csv ，作為工作文件，此文件4808行，用「:」分隔為四列，分別為「原正體字」「大陸簡化字」「對應關係」「大陸繁體字」；其中，調整三個字，取消了「鍾锺鍾」「蘋（艹频）蘋」二行，「轂」字簡體非「毂」字，「车」字上少了一横，用「♧」代替<br />
 <br />
 <br />
-用TXT/A-index.txt 和 TXT/A-ZJ.txt 與 perl/A-ZJ-index.pl 生成帶A00000編號的正簡繁體對應表 TXT/A-ZJ-index.txt，最終存為ODS<br />
+用TXT/A-index.csv 和 TXT/A_ZJF.txt 與 perl/A_ZJF-index.pl 生成帶A00000編號的正簡繁體對應表 TXT/A_ZJF-index.txt，最終存為ODS<br />
 <br />
 ODS檔（去掉「佔位」標誌，並添加首行）<br />
 位置:           於References下<br />
 文件:           整合_中華民國教育部-標準字對照簡化字.ods<br />
 <br />
-<h3>3.2 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
-<h4>3.2.1 用其附錄</h4>
+
+<h3>3.2 中華民國 非常用字表 （B表）</h3>
+<h4>3.2.1 B表對照表</h4>
+沒有官方的正簡繁體對照表，網友做的也沒有<br />
+<h4>3.2.2 做一份「假」的B表正簡繁對照表</h4>
+格式參照A_ZJF-index.csv，共五例，為：編號、正體、簡體、繁體、簡體與正體的對應關係（一對一、一對多、一對未知，由於本表是「假表」，所於全部用「一對未知」）<br />
+本假表用到一個中間文件，打開B-index.csv後，直接複製第二列正體字，粘貼到emacs轉換成簡體，並存為TXT/B_J.csv
+<h3>3.3 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
+<h4>3.3.1 用其附錄</h4>
 參攷2.3<br />
 維基:     https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8<br />
-<h4>3.2.2 文件</h4>
+<h4>3.3.2 文件</h4>
 將維基附錄1複製黏粘成 TXT/ORIGIN-G_JFY.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」<br />
 用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」<br />
 <br />
@@ -109,12 +116,12 @@ ODS檔，直接用Libre打開 TXT/G-JF-table.CSV 另存<br />
 位置:           於References下<br />
 文件:           整合_中華人民共和國8105個常用規範漢字-附錄1簡繁異表-3222字.ods<br />
 <br />
-<h5>3.2.1.1 3222字單行長表生成</h5>
+<h5>3.3.1.1 3222字單行長表生成</h5>
 輸入文件:       G-JFY-table.csv          3222行<br />
 輸出文件:       G-JFY-long-table.csv     3121行<br />
 脚本：          perl/G-JFY-long-GEN.pl<br />
 <br />
-<h5>3.2.1.2 全索引G表生成</h5>
+<h5>3.3.1.2 全索引G表生成</h5>
 輸入文件:       G-index.txt G-JF-table-long.txt<br />
 輸出文件:       G-full-index.txt<br />
 <br />
@@ -138,12 +145,12 @@ G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
 
 
 
-ORIGIN-A.csv *Tabspace*            原始的从ods另存為的A表<br />
-A-index.csv  *Tabspace*           用ORIGIN-A.csv生成的A表<br />
-ORIGIN-B.txt  *Tabspace*          單行的6343個字的文本文件<br />
-B-index.csv  *Tabspace*           用ORIGIN-B.txt生成的B表<br />
-ORIGIN-G.txt *Tabspace*           維基文庫copy/paste三級字表的文本文件<br />
-G-index.csv  *Tabspace*           用ORIGIN-G.txt生成的G表<br />
-ORIGIN-A_ZJF.txt *Tabspace*       複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
+ORIGIN-A.csv      - 原始的从ods另存為的A表<br />
+A-index.csv       - 用ORIGIN-A.csv生成的A表<br />
+ORIGIN-B.txt      - 單行的6343個字的文本文件<br />
+B-index.csv       - 用ORIGIN-B.txt生成的B表<br />
+ORIGIN-G.txt      - 維基文庫copy/paste三級字表的文本文件<br />
+G-index.csv       - 用ORIGIN-G.txt生成的G表<br />
+ORIGIN-A_ZJF.txt  - 複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
 
 
