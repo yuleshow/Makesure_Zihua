@@ -2,13 +2,14 @@
 梅玺阁字话，又名《包学包会写繁体》
 -----------------------------------
 
-## 1. 源起
+<h2>1. 源起</h2>
 大陸與臺灣，分別牽涉到三套字體（形），分別是簡體、繁體和正體，也分別有簡繁體、正簡體（不是簡正體）的對照表，然而繁體與正體的對照，始終沒有打通，目前有一表格、文章，是網友們自行整理的，不是很規範也不全，本計劃着眼於从兩岸「官方」文件中整合出一個快速檢閱查找的方法來。<br />
-## 2. 官方字表
+
+<h2>2. 官方字表</h2>
 <h3>2.1 中華民國教育部 4808 個常用字說明 民國71年（1982年）9月1日</h3>
 中華民國教育部官方入口: https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46 <br /><br />
 https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97%E8%AA%AA%E6%98%8E.pdf<br />
-<h5>2.1.1 常用國字標準字體表（A表）</h5>
+<h4>2.1.1 常用國字標準字體表（A表）</h4>
 PDF檔<br />
 位置:           於References下<br />
 文件名:         官方_中國民國教育部4808個常用字.pdf<br />
@@ -27,11 +28,11 @@ TXT/ORIGIN-A.csv<br />
 中華民國標準字體查詢各字體入口（含A表、B表）:   https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&thirdclassify_sn=475&content_sn=8<br />
 相關維基文庫:   https://zh.m.wikisource.org/zh-hant/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8<br />
 <br />
-<h3>2.2 次常用國字標準字體表（B表）
+<h3>2.2 次常用國字標準字體表（B表）</h3>
 中華民國標準字體查詢各字體入口（含A表、B表）:   https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&thirdclassify_sn=475&content_sn=8  (同2.1.1)<br />
-<h5>2.2.1 完整表格</h5>
+<h4>2.2.1 完整表格</h4>
       雖然有2.2提及的查詢入口，但至今沒有找到如2.1.1中那樣現成的官方PDF或電子表格，亦沒有找到象A表那樣官方的「教育部字號」<br />
-<h5>#2.2.1.1 借用表格</h5>
+<h5>2.2.1.1 借用表格</h5>
 借用網友表格，出處: https://sites.google.com/site/jzweon/list/chart-of-standard-forms-of-less-than-common-national-characters<br />
 直接取文字部分 copy/paste成 TXT/ORIGIN-B.txt<br />
 <h5>2.2.1.2 調整表格</h5>
@@ -44,13 +45,13 @@ ODS檔<br />
 <h3>2.3 通用規範漢字表（G表） 2013年6月18日
 中華人民共和國教育部官方入口<br />
 http://www.gov.cn/zwgk/2013-08/19/content_2469793.htm<br />
-<h5>2.3.1 精掃描文件</h5>
+<h4>2.3.1 精掃描文件</h4>
 PDF檔<br />
 位置:           於References下<br />
 文件名:         官方_中華人民共和國_通用規範漢字表.pdf<br />
 原下載網址:     http://www.moe.gov.cn/publicfiles/business/htmlfiles/moe/cmsmedia/other/2013/7/other98742.zip<br />
 <br />
-2.3.1 文字版<br />
+<h4>2.3.1 文字版</h4>
 由於未找到文字版官方文件，採用維基文庫，copy/paste 三級字庫文字部分，存於ORIGIN-G，8105字共8175行，用perl/G-index-GEN.pl 整理<br />
 <br />
 ODS檔<br />
@@ -96,10 +97,10 @@ ODS檔（去掉「佔位」標誌，並添加首行）<br />
 位置:           於References下<br />
 文件:           整合_中華民國教育部-標準字對照簡化字.ods<br />
 <br />
-##3.2 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表
-參見2.3.1 用其附錄，<br />
+<h3>3.2 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
+<h4>2.3.1 用其附錄</h4>
 維基:     https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8<br />
-<h3>3.2.1 文件<br />
+<h4>2.3.2 文件</h4>
 將維基附錄1複製黏粘成 TXT/ORIGIN-G_JFY.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」<br />
 用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」<br />
 <br />
