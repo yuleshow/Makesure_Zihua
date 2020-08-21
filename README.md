@@ -137,26 +137,12 @@ G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
 
 
 
-ORIGIN-A.csv            原始的从ods另存為的A表
-A-index.csv             用ORIGIN-A.csv生成的A表
-ORIGIN-B.txt            單行的6343個字的文本文件
-B-index.csv             用ORIGIN-B.txt生成的B表
-ORIGIN-G.txt            維基文庫copy/paste三級字表的文本文件
-G-index.csv             用ORIGIN-G.txt生成的G表
-ORIGIN-A_ZJF.txt        複製自PDF的原文本，中華民國官方A表「正簡繁」對照表
+ORIGIN-A.csv *Tabspace*            原始的从ods另存為的A表<br />
+A-index.csv  *Tabspace*           用ORIGIN-A.csv生成的A表<br />
+ORIGIN-B.txt  *Tabspace*          單行的6343個字的文本文件<br />
+B-index.csv  *Tabspace*           用ORIGIN-B.txt生成的B表<br />
+ORIGIN-G.txt *Tabspace*           維基文庫copy/paste三級字表的文本文件<br />
+G-index.csv  *Tabspace*           用ORIGIN-G.txt生成的G表<br />
+ORIGIN-A_ZJF.txt *Tabspace*       複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
 
 
-A-index-GEN.pl          Input file:     ORIGIN-A.csv
-                        Output file:    A-index.csv
-B-index-GEN.pl          Input file:     ORIGIN-B.txt
-                        Output file:    B-index.csv
-G-index-GEN.pl          Input file:     ORIGIN-G.txt
-                        Output file:    G-index.csv
-A_ZJF-GEN.pl            Input file:     ORIGIN-A_ZJF.txt
-                        Output file:    A_ZJF-unindexed.csv
-A_ZJF-index.pl          Input file:     A_ZJF-unindexed.csv A-index.csv                    
-                        Output file:    A_ZJF-index.csv
-G_JFY-GEN.pl            Input file:     ORIGIN-G_JFY.txt
-                        Ootput file:    G_JFY-table.csv
-G_JFY-long-GEN.pl       Input file:     G_JFY-table.csv
-                        Output file:    G_JFY-long-table.csv
