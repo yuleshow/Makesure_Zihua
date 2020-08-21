@@ -13,7 +13,7 @@ use utf8;
 use open ":std", ":encoding(UTF-8)";
 
 # my $input_file = $ARGV[0];
-my $input_file = "A-index.txt";
+my $input_file = "../TXT/A-index.txt";
 
 open (INPUT_FILE, '<', $input_file);
 while (<INPUT_FILE>) {
@@ -26,7 +26,7 @@ while (<INPUT_FILE>) {
 
 close (INPUT_FILE);
 
-my $input_file = "A-ZJ.txt";
+my $input_file = "../TXT/A-ZJ.txt";
 
 open (INPUT_FILE, '<', $input_file);
 while (<INPUT_FILE>) {

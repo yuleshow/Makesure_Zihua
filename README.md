@@ -20,8 +20,10 @@ ODS檔
 文件名:         官方_中華民國教育部4808個常用字.ods
 原下載網址:     https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97.ods
 
-TXT檔
-去掉首行後，用「:」分隔，TXT/A-index.txt文檔
+TXT檔，由上列ods檔另存為.csv而成，Field delimiter「:」，String delimiter為空
+TXT/ORIGIN-A.csv
+
+用perl/A-index-GEN.pl 生成 TXT/A-index.csv
 
 中華民國標準字體查詢各字體入口（含A表、B表）:   https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=436&thirdclassify_sn=475&content_sn=8
 相關維基文庫:   https://zh.m.wikisource.org/zh-hant/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8
@@ -32,7 +34,7 @@ TXT檔
       雖然有2.2提及的查詢入口，但至今沒有找到如2.1.1中那樣現成的官方PDF或電子表格，亦沒有找到象A表那樣官方的「教育部字號」
 2.2.1.2 借用表格
 借用網友表格，出處: https://sites.google.com/site/jzweon/list/chart-of-standard-forms-of-less-than-common-national-characters
-直接copy/paste成二個文件 perl/B_text.txt perl/B_unicode.txt
+直接取文字部分 copy/paste成 TXT/ORIGIN-B.txt
 2.2.1.3 調整表格
 perl/B_unicode.txt 表直接替換「空格」為「回車」，共6343行
 perl/B_text.txt 用 perl/oneline-to-multilines-add-B-number.pl 調整為用B00000-B06343號的文件，導入新的ODS
@@ -118,3 +120,16 @@ ODS檔，直接用Libre打開 TXT/G-JF-table.txt 另存
 ODS文檔
 位置:           References
 文件名:         整合_中華人民共和國8105個常用規範漢字-全簡繁異表-8105字.ods
+
+
+-----------------------------------------------------------------
+ORIGIN-A.csv    原始的从ods另存為的A表
+A-index.csv     用ORIGIN-A.csv生成的A表
+ORIGIN-B.txt    單行的6343個字的文本文件
+B-index.csv     用ORIGIN-B.txt生成的B表
+
+A-index-GEN.pl  Input file:     ORIGIN-A.csv
+                Output file:    A-index.csv
+B-index-GEN.pl  Input file:     ORIGIN-B.csv
+                Output file:    B-index.csv
+

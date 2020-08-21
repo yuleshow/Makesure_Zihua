@@ -19,7 +19,6 @@ open (INPUT_FILE, '<', $input_file);
 while (<INPUT_FILE>) {
     $temp=$_;
     $temp =~ s/\r|\n//g;
-
 }
 
 
@@ -29,26 +28,30 @@ close (INPUT_FILE);
 
 @output_chars=split(undef, $temp);
 
+my $output_file = "../TXT/B-index.csv";
+
+open (OUTPUT_FILE, '>', $output_file);
+
 
 
 $i=1;
 foreach (@output_chars) {
-    print "B0";
+    print OUTPUT_FILE "B0";
 
 
     if ($i<1000) {
-        print "0";
+        print OUTPUT_FILE  "0";
     }
 
     if ($i<100) {
-        print "0";
+        print OUTPUT_FILE  "0";
     }
     if ($i<10) {
-       print "0";
+        print OUTPUT_FILE  "0";
     }
-        
-    print $i.":".$_;
-    print "\n";
+    
+    print  OUTPUT_FILE  $i.":".$_;
+    print   OUTPUT_FILE "\n";
     $i++;
 }
 
