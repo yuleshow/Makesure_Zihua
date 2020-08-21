@@ -7,9 +7,9 @@
 
 ## 1. 官方字表
 ###   1. 中華民國教育部 4808 個常用字說明 民國71年（1982年）9月1日
-      中華民國教育部官方入口: https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46 <br />
-      https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97%E8%AA%AA%E6%98%8E.pdf
-      1. #### 常用國字標準字體表（A表）
+中華民國教育部官方入口: https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46 <br />
+https://language.moe.gov.tw/001/Upload/Files/site_content/download/mandr/%E6%95%99%E8%82%B2%E9%83%A84808%E5%80%8B%E5%B8%B8%E7%94%A8%E5%AD%97%E8%AA%AA%E6%98%8E.pdf
+####    1. 常用國字標準字體表（A表）
 PDF檔
 位置:           於References下
 文件名:         官方_中國民國教育部4808個常用字.pdf
