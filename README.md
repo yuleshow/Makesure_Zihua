@@ -36,8 +36,7 @@ TXT/ORIGIN-A.csv
 借用網友表格，出處: https://sites.google.com/site/jzweon/list/chart-of-standard-forms-of-less-than-common-national-characters
 直接取文字部分 copy/paste成 TXT/ORIGIN-B.txt
 2.2.1.3 調整表格
-perl/B_unicode.txt 表直接替換「空格」為「回車」，共6343行
-perl/B_text.txt 用 perl/oneline-to-multilines-add-B-number.pl 調整為用B00000-B06343號的文件，導入新的ODS
+將 TXT/ORIGIN-B.txt 用 perl/B-index-GEN.pl 調整為用B00000-B06343號的文件，導入新的ODS
 
 ODS檔
 位置:           於References下
@@ -53,7 +52,7 @@ PDF檔
 原下載網址:     http://www.moe.gov.cn/publicfiles/business/htmlfiles/moe/cmsmedia/other/2013/7/other98742.zip
 
 2.3.1 文字版
-由於未找到文字版官方文件，採用維基文庫，手工調整成帶G1-00000, G2-00000, G3-00000的三級字庫
+由於未找到文字版官方文件，採用維基文庫，copy/paste 三級字庫文字部分，存於ORIGIN-G，8105字共8175行，用perl/G-index-GEN.pl 整理
 
 ODS檔
 位置:           於References下
@@ -61,8 +60,8 @@ ODS檔
 原網址:         https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8
 
 TXT檔
-位置:           於References下
-文件名:         G-index.txt
+位置:           於TXT下
+文件名:         G-index.CSV
 
 3. 簡繁正對照
 3.1 中華民國教育部 標準字與簡化字對照手冊 2011年9月
@@ -88,8 +87,9 @@ Replace regexp (default [0-9]+ 畫
 替換後，剩4810行，其中「鍾」「蘋」各佔二行
 
 -----以上emacs手工，太慢，以下perl大法 -----
-將PDF全文複製並保留「- 6 -」至「- 91 -」之間，共5097行，保存至perl/A_Zheng-Jian.txt
-用perl/A_Zheng-Jian-GEN.pl直接生成TXT/A-ZJ.txt ，作為工作文件，此文件4808行，用「:」分隔為四列，分別為「原正體字」「大陸簡化字」「對應關係」「大陸繁體字」
+將PDF全文複製並保留「- 6 -」至「- 91 -」之間，共5097行，保存至TXT/ORIGIN-A_ZJF.txt
+用perl/A_ZJF-GEN.pl直接生成TXT/A_ZJF-unindexed.csv ，作為工作文件，此文件4808行，用「:」分隔為四列，分別為「原正體字」「大陸簡化字」「對應關係」「大陸繁體字」；其中，調整三個字，取消了「鍾锺鍾」「蘋（艹频）蘋」二行，「轂」字簡體非「毂」字，「车」字上少了一横，用「♧」代替
+
 
 用TXT/A-index.txt 和 TXT/A-ZJ.txt 與 perl/A-ZJ-index.pl 生成帶A00000編號的正簡繁體對應表 TXT/A-ZJ-index.txt，最終存為ODS
 
@@ -101,17 +101,17 @@ ODS檔（去掉「佔位」標誌，並添加首行）
 參見2.3.1 用其附錄，
 維基:     https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8
 3.2.1 文件
-將維基附錄1複製黏粘成 TXT/G-JF.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」
-用 perl/G_Jian-Fan-Gen.pl 生成 TXT/G-JF-table.txt 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」
+將維基附錄1複製黏粘成 TXT/ORIGIN-G_JFY.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」
+用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」
 
-ODS檔，直接用Libre打開 TXT/G-JF-table.txt 另存
+ODS檔，直接用Libre打開 TXT/G-JF-table.CSV 另存
 位置:           於References下
 文件:           整合_中華人民共和國8105個常用規範漢字-附錄1簡繁異表-3222字.ods
 
 3.2.1.1 3222字單行長表生成
-輸入文件:       G-JF-table.txt          3222行
-輸出文件:       G-JF-table-long.txt     3121行
-脚本：          perl/G-JF-table-long.pl
+輸入文件:       G-JFY-table.csv          3222行
+輸出文件:       G-JFY-long-table.csv     3121行
+脚本：          perl/G-JFY-long-GEN.pl
 
 3.2.1.2 全索引G表生成
 輸入文件:       G-index.txt G-JF-table-long.txt
@@ -123,13 +123,26 @@ ODS文檔
 
 
 -----------------------------------------------------------------
-ORIGIN-A.csv    原始的从ods另存為的A表
-A-index.csv     用ORIGIN-A.csv生成的A表
-ORIGIN-B.txt    單行的6343個字的文本文件
-B-index.csv     用ORIGIN-B.txt生成的B表
+ORIGIN-A.csv            原始的从ods另存為的A表
+A-index.csv             用ORIGIN-A.csv生成的A表
+ORIGIN-B.txt            單行的6343個字的文本文件
+B-index.csv             用ORIGIN-B.txt生成的B表
+ORIGIN-G.txt            維基文庫copy/paste三級字表的文本文件
+G-index.csv             用ORIGIN-G.txt生成的G表
+ORIGIN-A_ZJF.txt        複製自PDF的原文本，中華民國官方A表「正簡繁」對照表
 
-A-index-GEN.pl  Input file:     ORIGIN-A.csv
-                Output file:    A-index.csv
-B-index-GEN.pl  Input file:     ORIGIN-B.csv
-                Output file:    B-index.csv
 
+A-index-GEN.pl          Input file:     ORIGIN-A.csv
+                        Output file:    A-index.csv
+B-index-GEN.pl          Input file:     ORIGIN-B.txt
+                        Output file:    B-index.csv
+G-index-GEN.pl          Input file:     ORIGIN-G.txt
+                        Output file:    G-index.csv
+A_ZJF-GEN.pl            Input file:     ORIGIN-A_ZJF.txt
+                        Output file:    A_ZJF-unindexed.csv
+A_ZJF-index.pl          Input file:     A_ZJF-unindexed.csv A-index.csv                    
+                        Output file:    A_ZJF-index.csv
+G_JFY-GEN.pl            Input file:     ORIGIN-G_JFY.txt
+                        Ootput file:    G_JFY-table.csv
+G_JFY-long-GEN.pl       Input file:     G_JFY-table.csv
+                        Output file:    G_JFY-long-table.csv
