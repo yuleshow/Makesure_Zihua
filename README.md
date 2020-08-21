@@ -98,9 +98,10 @@ ODS檔（去掉「佔位」標誌，並添加首行）<br />
 文件:           整合_中華民國教育部-標準字對照簡化字.ods<br />
 <br />
 <h3>3.2 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
-<h4>2.3.1 用其附錄</h4>
+<h4>3.2.1 用其附錄</h4>
+參攷2.3<br />
 維基:     https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8<br />
-<h4>2.3.2 文件</h4>
+<h4>3.2.2 文件</h4>
 將維基附錄1複製黏粘成 TXT/ORIGIN-G_JFY.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」<br />
 用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」<br />
 <br />
@@ -144,18 +145,5 @@ B-index.csv  *Tabspace*           用ORIGIN-B.txt生成的B表<br />
 ORIGIN-G.txt *Tabspace*           維基文庫copy/paste三級字表的文本文件<br />
 G-index.csv  *Tabspace*           用ORIGIN-G.txt生成的G表<br />
 ORIGIN-A_ZJF.txt *Tabspace*       複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
-
-
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
-
-
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
 
 
