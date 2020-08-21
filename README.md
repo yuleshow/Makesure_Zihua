@@ -123,6 +123,18 @@ ODS文檔
 
 
 -----------------------------------------------------------------
+
+
+perl scriptr | Input files   | Output files      
+------------ | ------------- | -------------
+A-index-GEN.pl | ORIGIN-A.csv | A-index.csv
+B-index-GEN.pl | ORIGIN-B.txt | B-index.csv
+G-index-GEN.pl | ORIGIN-G.txt | G-index.csv
+A_ZJF-GEN.pl   | ORIGIN-A_ZJF.txt | A_ZJF-unidexed.csv
+A_ZJF-index.pl | A_ZJF-unidexed.csv A-index.csv | A_ZJF-index.csv
+
+
+
 ORIGIN-A.csv            原始的从ods另存為的A表
 A-index.csv             用ORIGIN-A.csv生成的A表
 ORIGIN-B.txt            單行的6343個字的文本文件
