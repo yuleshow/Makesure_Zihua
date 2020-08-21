@@ -74,7 +74,7 @@ PDF檔<br />
 <br />
 ODS檔<br />
 此ODS檔由全文複製上列PDF檔後，取第6頁至第90頁內容，去掉空格後，再由emacs用replace-regexp替換而成，如下： <br />
-```Replace regexp (default 【[0-9]+ 畫】<br />
+```Replace regexp (default 【[0-9]+ 畫】<br /> ```
  → ): <br />
 Replace regexp (default [0-9]+ 畫～ [0-9]+ 畫<br />
  → ):<br />
@@ -84,7 +84,7 @@ Replace regexp (default 標準字對照簡化字表<br />
  → ):<br />
 Replace regexp (default [0-9]+ 畫<br />
  → ):<br />
-替換後，剩4810行，其中「鍾」「蘋」各佔二行<br />// emacs_lisp```
+替換後，剩4810行，其中「鍾」「蘋」各佔二行<br />// emacs_lisp ```
 <br />
 -----以上emacs手工，太慢，以下perl大法 -----<br />
 將PDF全文複製並保留「- 6 -」至「- 91 -」之間，共5097行，保存至TXT/ORIGIN-A_ZJF.txt<br />
