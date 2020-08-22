@@ -137,7 +137,7 @@ ODS文檔<br />
 文件名:         整合_中華人民共和國8105個常用規範漢字-全簡繁異表-8105字.ods
 
 <h3>3.4 AB合並表</h3>
-```cat A_ZJF-index.csv B_ZJF-index.csv > AB_ZJF-index.csv    //shell```
+<code>cat A_ZJF-index.csv B_ZJF-index.csv > AB_ZJF-index.csv</code>
 
 <h2>4. 總索引表</h2>
 這個以AB表中的簡化字對應G表的簡體字的總索引表
