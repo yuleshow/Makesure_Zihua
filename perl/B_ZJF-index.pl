@@ -203,8 +203,11 @@ open (OUTPUT_FILE, '>', $output_file);
 
 
 foreach my $number (sort keys %b_index) {
-#        print $number." => ".$bJ_index{$number}."\n";
-    print OUTPUT_FILE "$number:$b_index{$number}:$bJ_index{$number}:$b_index{$number}:一對未知\n";
+    #        print $number." => ".$bJ_index{$number}."\n";
+    if ($b_index{$number} ne $b_index{$number} ) {
+        print OUTPUT_FILE "$number:$b_index{$number}:$bJ_index{$number}:$b_index{$number}:一對未知\n";
+    } else {
+        print OUTPUT_FILE "$number:$b_index{$number}:$bJ_index{$number}:無相關對應:一對未知\n";
 #    print OUTPUT_FILE $ZJF{$number}."\n";
 }
 
