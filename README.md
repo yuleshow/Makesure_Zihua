@@ -112,9 +112,9 @@ ODS檔（去掉「佔位」標誌，並添加首行）<br />
 維基:     https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8<br />
 <h4>3.3.2 文件</h4>
 將維基附錄1複製黏粘成 TXT/ORIGIN-G_JFY.txt 文件，从「规范字与繁体字、异体字对照表」始至「8100	𫚭	(鱲)	」<br />
-用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開昏戈四例，分別為「序號」「簡體字」「繁體字」「異體字」<br />
+用 perl/G_JFY-GEN.pl 生成 TXT/G-JFY-table.csv 文件，成為用「:」隔開成四例，分別為「序號」「簡體字」「繁體字」「異體字」<br />
 <br />
-ODS檔，直接用Libre打開 TXT/G-JF-table.CSV 另存<br />
+ODS檔，直接用Libre打開 TXT/G-JFY-table.CSV 另存<br />
 位置:           於References下<br />
 文件:           整合_中華人民共和國8105個常用規範漢字-附錄1簡繁異表-3222字.ods<br />
 <br />
@@ -124,13 +124,23 @@ ODS檔，直接用Libre打開 TXT/G-JF-table.CSV 另存<br />
 脚本：          perl/G-JFY-long-GEN.pl<br />
 <br />
 <h5>3.3.1.2 全索引G表生成</h5>
-輸入文件:       G-index.txt G-JF-table-long.txt<br />
-輸出文件:       G-full-index.txt<br />
+輸入文件:       G-index.csv G_JFY-long-table.csv<br />
+輸出文件:       G_JFY-full-index.txt<br />
 <br />
 ODS文檔<br />
 位置:           References<br />
 文件名:         整合_中華人民共和國8105個常用規範漢字-全簡繁異表-8105字.ods
 
+<h2>4. 總表的生成</h2>
+<h3>4.1 表格的準備
+AB_ZJF-index.csv - AB正簡繁表，整合後的A表和（假）B表，共五列，分別為「編號」「正體」「簡體」「繁體」「簡體對繁體關系」<br />
+G_JFY-full-index.csv - G簡繁異表，共五例（個別一對多延長單行），共四列，分別為「編號」「簡體」「繁體」「異體」<br />
+最終用perl/AB-G_ZJFY-full-index.pl生成全索引ABG整合表AB-G_ZJFY-full-index.csv，表內附表頭<br />
+<B>有趣的是，最後的總索引表，可以看出8105個大陸規範漢字，在臺灣的「常用」「次常用」表上衹出現了7541個字（其中還有一對多繁體重複的）</b><br />
+
+<h2>5. 其它</h2>
+<h3>5.1 缺字</h3>
+A01266 「彞」在《官方_中華民國教育部-標準字對照簡化字》中沒有出現，但奇怪的是，這張表還是4808字，待查</br >
 
 -----------------------------------------------------------------
 
@@ -142,10 +152,13 @@ B-index-GEN.pl | ORIGIN-B.txt | B-index.csv
 G-index-GEN.pl | ORIGIN-G.txt | G-index.csv
 A_ZJF-GEN.pl   | ORIGIN-A_ZJF.txt | A_ZJF-unidexed.csv
 A_ZJF-index.pl | A_ZJF-unidexed.csv<br />A-index.csv | A_ZJF-index.csv
-G_JFY-GEN.pl   | ORIGIN-G_JFY.txt | G_JFY-table.csv
-G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
 B_ZJF-index.pl    | B_J.csv<br />B-index.csv    | B_ZJF-index.csv
 B_compaure.pl     | B_ZJ-two.csv    | B_ZJ-two-diff.csv
+G_JFY-GEN.pl   | ORIGIN-G_JFY.txt | G_JFY-table.csv
+G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
+G_JFY-full-index.pl | G_JFY-long-table.csv<br />G-index.csv | G_JFY-full-index.csv
+AB-G_ZJFY-full-index.pl | AB_ZJF-index.csv<br />G_JFY-full-index.csv | AB-G_ZJFY-full-index.csv
+
 
 
 ORIGIN-A.csv      - 原始的从ods另存為的A表<br />

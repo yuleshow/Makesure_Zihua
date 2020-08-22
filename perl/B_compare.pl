@@ -9,7 +9,7 @@ use Encode qw(encode decode);
 use utf8;
 use open ":std", ":encoding(UTF-8)";
 
-my $input_file = "B_ZJ-two.csv";
+my $input_file = "../TXT/B_ZJ-two.csv";
 
 open (INPUT_FILE, '<', $input_file);
 while (<INPUT_FILE>) {
@@ -21,11 +21,14 @@ while (<INPUT_FILE>) {
 
 close (INPUT_FILE);
 
+my $output_file = "../TXT/B_ZJ-diff.csv";
+open (OUTPUT_FILE, '>', $output_file);
 
 for(my $i = 0; $i <=6343; $i++){
 #    print $A[$i]."\n";
     if ($AJ[$i] ne $BJ[$i])
     {
-        print "$i:$A[$i]:$AJ[$i]:$BJ[$i]\n";
+        print OUTPUT_FILE "$i:$A[$i]:$AJ[$i]:$BJ[$i]\n";
     }
 }
+

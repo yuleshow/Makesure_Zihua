@@ -26,17 +26,17 @@ open (OUTPUT_FILE, '>', $output_file);
 while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s /\r|\n//g;
-
+    $temp =~ s /c[0-9]+//g;
 
     if ($temp ne '') {
         ($g_number, $g_character) = split (/\ /, $temp);
 
         if ($g_number <= 3500) {
-            print OUTPUT_FILE  "G1-$g_number:$g_character\n";
+            print OUTPUT_FILE  "G1-0$g_number:$g_character\n";
         } elsif (($g_number > 3500) and ($g_number <=6500)) {
-            print OUTPUT_FILE  "G2-$g_number:$g_character\n";
+            print OUTPUT_FILE  "G2-0$g_number:$g_character\n";
         } elsif ($g_number>6500) {
-            print OUTPUT_FILE "G3-$g_number:$g_character\n";
+            print OUTPUT_FILE "G3-0$g_number:$g_character\n";
         }
          
         
