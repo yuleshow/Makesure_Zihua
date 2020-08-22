@@ -58,4 +58,3 @@ foreach my $number (sort keys %ZJF) {
 }
 
 close (OUTPUT_FILE);
-

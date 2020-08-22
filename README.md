@@ -103,7 +103,9 @@ ODS檔（去掉「佔位」標誌，並添加首行）<br />
 沒有官方的正簡繁體對照表，網友做的也沒有<br />
 <h4>3.2.2 做一份「假」的B表正簡繁對照表</h4>
 格式參照A_ZJF-index.csv，共五例，為：編號、正體、簡體、繁體、簡體與正體的對應關係（一對一、一對多、一對未知，由於本表是「假表」，所於全部用「一對未知」）<br />
-本假表用到一個中間文件，打開B-index.csv後，直接複製第二列正體字，粘貼到emacs轉換成簡體，並存為TXT/B_J.csv
+本假表用到一個中間文件，打開B-index.csv後，直接複製第二列正體字，粘貼到emacs轉換成簡體，並存為TXT/B_J.csv，最終用B_JFY-index.pl 生成 B_JFY-index.csv<br />
+由於不同方案的「簡繁轉換」結果不同，用https://www.chineseconverter.com/en/convert/simplified-to-traditional 又轉一遍，用第一次生成的 B_JFY-index.csv 再插入第二次轉成的簡體單獨成列，另存為B_JFY-two.csv，用B_compare.pl 生成比較文件B_JFY-two-diff.csv，人工比較選擇<br />
+
 <h3>3.3 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
 <h4>3.3.1 用其附錄</h4>
 參攷2.3<br />
@@ -142,7 +144,8 @@ A_ZJF-GEN.pl   | ORIGIN-A_ZJF.txt | A_ZJF-unidexed.csv
 A_ZJF-index.pl | A_ZJF-unidexed.csv<br />A-index.csv | A_ZJF-index.csv
 G_JFY-GEN.pl   | ORIGIN-G_JFY.txt | G_JFY-table.csv
 G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
-
+B_ZJF-index.pl    | B_J.csv<br />B-index.csv    | B_ZJF-index.csv
+B_compaure.pl     | B_ZJ-two.csv    | B_ZJ-two-diff.csv
 
 
 ORIGIN-A.csv      - 原始的从ods另存為的A表<br />
@@ -152,5 +155,6 @@ B-index.csv       - 用ORIGIN-B.txt生成的B表<br />
 ORIGIN-G.txt      - 維基文庫copy/paste三級字表的文本文件<br />
 G-index.csv       - 用ORIGIN-G.txt生成的G表<br />
 ORIGIN-A_ZJF.txt  - 複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
-
+G_JFY-table.csv   - 有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以重復多行形式出現<br />
+G_JFY-long-table.csv - 
 
