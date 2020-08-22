@@ -16,7 +16,8 @@ while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s /\r|\n//g;
     ($number, $A[$number], $AJ[$number], $B[$number], $BJ[$number]) = split (/:/, $temp);
-
+#   print "$number, $A[$number], $AJ[$number], $B[$number], $BJ[$number]\n";
+    
 }
 
 close (INPUT_FILE);
@@ -32,3 +33,4 @@ for(my $i = 0; $i <=6343; $i++){
     }
 }
 
+close (OUTPUT_FILE);

@@ -25,7 +25,7 @@ while (<INPUT_FILE>) {
 
 close (INPUT_FILE);
 
-my $input_file = "../TXT/B_J.csv";
+my $input_file = "../TXT/ORIGIN-B_J.csv";
 
 open (INPUT_FILE, '<', $input_file);
 my $i=1;
@@ -34,7 +34,7 @@ while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s /\r|\n//g;
 
-$temp =~ s /噚/㖊/g;
+$temp =~ s /噚/㖊/g;  #以下正則調整個別繁簡轉換不統一的情况，原表中簡體改為更符合標準一些的簡體
 $temp =~ s /撝/㧑/g;
 $temp =~ s /殰/㱩/g;
 $temp =~ s /鸂/㶉/g;
@@ -48,7 +48,7 @@ $temp =~ s /鷿/䴙/g;
 $temp =~ s /嚲/亸/g;
 $temp =~ s /俔/伣/g;
 $temp =~ s /徊/佪/g;
-$temp =~ s /羅/偻/g;
+$temp =~ s /罗/偻/g;
 $temp =~ s /厤/历/g;
 $temp =~ s /蔘/参/g;
 $temp =~ s /衕/同/g;
@@ -204,10 +204,11 @@ open (OUTPUT_FILE, '>', $output_file);
 
 foreach my $number (sort keys %b_index) {
     #        print $number." => ".$bJ_index{$number}."\n";
-    if ($b_index{$number} ne $b_index{$number} ) {
+    if ($b_index{$number} ne $bJ_index{$number} ) {
         print OUTPUT_FILE "$number:$b_index{$number}:$bJ_index{$number}:$b_index{$number}:一對未知\n";
     } else {
         print OUTPUT_FILE "$number:$b_index{$number}:$bJ_index{$number}:無相關對應:一對未知\n";
+    }
 #    print OUTPUT_FILE $ZJF{$number}."\n";
 }
 

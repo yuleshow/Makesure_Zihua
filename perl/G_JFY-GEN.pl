@@ -25,6 +25,7 @@ while (<INPUT_FILE>) {
     $temp =~ s/规范字与繁体字、异体字对照表//g;
     $temp =~ s/规范字	繁体字	异体字//g;
     $temp =~ s/d[0-9]+//g;
+        $temp =~ s/a[0-9]+//g;
     $temp =~ s/\t\t/\t(無繁體)\t/g;
     $temp =~ s/\)\t\[/:/g;
     $temp =~ s/\t\(/:/g;

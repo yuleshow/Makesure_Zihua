@@ -108,9 +108,10 @@ A01266，在複製粘貼到ORIGIN-A_ZJF.txt中，「彞」字會自動變成「�
 沒有官方的正簡繁體對照表，網友做的也沒有<br />
 <h4>3.2.2 做一份「假」的B表正簡繁對照表</h4>
 格式參照A_ZJF-index.csv，共五例，為：編號、正體、簡體、繁體、簡體與正體的對應關係（一對一、一對多、一對未知，由於本表是「假表」，所於全部用「一對未知」）<br />
-本假表用到一個中間文件，打開B-index.csv後，直接複製第二列正體字，粘貼到emacs轉換成簡體，並存為TXT/B_J.csv，最終用B_JFY-index.pl 生成 B_JFY-index.csv<br />
+本假表用到一個中間文件，打開B-index.csv後，直接複製第二列正體字，粘貼到emacs（OpenCC插件，正確率一般）轉換成簡體，並存為TXT/B_J.csv，最終用B_JFY-index.pl 生成 B_JFY-index.csv<br />
 由於不同方案的「簡繁轉換」結果不同，用https://www.chineseconverter.com/en/convert/simplified-to-traditional 又轉一遍，用第一次生成的 B_JFY-index.csv 再插入第二次轉成的簡體單獨成列，另存為B_JFY-two.csv，用B_compare.pl 生成比較文件B_JFY-two-diff.csv，人工比較選擇<br />
-
+以上兩行作癈，最終還是選用了Libre Office內帶的繁簡轉換方案，稍稍靠譜點，電腦中文化幾十年，至今沒有好的簡繁轉換碼表，一岸衹顧叫着「自古以來」，另一岸也不知在幹點啥，官方碼表却連一萬個字都不到，哎！<br />
+將生成的6343行單字文件，直接存為TXT/ORIGIN-B_J.csv<br />
 <h3>3.3 中華人民共和國 常用規範漢字表 附件1. 规范字与繁体字、异体字对照表</h3>
 <h4>3.3.1 用其附錄</h4>
 參攷2.3<br />
@@ -166,7 +167,7 @@ B-index-GEN.pl | ORIGIN-B.txt | B-index.csv
 G-index-GEN.pl | ORIGIN-G.txt | G-index.csv
 A_ZJF-GEN.pl   | ORIGIN-A_ZJF.txt | A_ZJF-unidexed.csv
 A_ZJF-index.pl | A_ZJF-unidexed.csv<br />A-index.csv | A_ZJF-index.csv
-B_ZJF-index.pl    | B_J.csv<br />B-index.csv    | B_ZJF-index.csv
+B_ZJF-index.pl    | ORIGIN-B_J.csv<br />B-index.csv    | B_ZJF-index.csv
 B_compaure.pl     | B_ZJ-two.csv    | B_ZJ-two-diff.csv
 G_JFY-GEN.pl   | ORIGIN-G_JFY.txt | G_JFY-table.csv
 G_JFY-long-GEN.pl | G_JFY-table.csv | G_JFY-long-table.csv
@@ -174,16 +175,28 @@ G_JFY-full-index.pl | G_JFY-long-table.csv<br />G-index.csv | G_JFY-full-index.c
 AB-G_ZJFY-full-index.pl | AB_ZJF-index.csv<br />G_JFY-full-index.csv | AB-G_ZJFY-full-index.csv
 
 
+文件名                          |內容
+------------------------------- |---------------------
+AB-G_ZJFY-full-index.csv        |
+AB_ZJF-index.csv                |合並的AB表，含正簡繁，帶編碼
+A-index.csv                     |用ORIGIN-A.csv生成的A表，帶編碼
+A_ZJF-index.csv                 |
+A_ZJF-unidexed.csv              |
+B-index.csv                     |用ORIGIN-B.txt生成的B表，帶編碼
+B_ZJF-index.csv                 |
+G-index.csv                     |用ORIGIN-G.txt生成的G表，帶編碼
+G_JFY-full-index.csv            |
+G_JFY-long-table.csv            |有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以單行形式出現
+G_JFY-table.csv                 |有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以重復多行形式出現
+ORIGIN-A.csv                    |原始的从ods另存為的A表
+ORIGIN-A_ZJF.txt                |複製自PDF的原文本，中華民國官方A表「正簡繁」對照表
+ORIGIN-B_J.csv                  |
+ORIGIN-B.txt                    |單行的6343個字的文本文件，B表
+ORIGIN-G_JFY.txt                |維基文庫copy/paste三級字表的文本文件
+ORIGIN-G.txt                    |
 
-ORIGIN-A.csv      - 原始的从ods另存為的A表<br />
-A-index.csv       - 用ORIGIN-A.csv生成的A表<br />
-ORIGIN-B.txt      - 單行的6343個字的文本文件<br />
-B-index.csv       - 用ORIGIN-B.txt生成的B表<br />
-ORIGIN-G.txt      - 維基文庫copy/paste三級字表的文本文件<br />
-G-index.csv       - 用ORIGIN-G.txt生成的G表<br />
-ORIGIN-A_ZJF.txt  - 複製自PDF的原文本，中華民國官方A表「正簡繁」對照表<br />
-G_JFY-table.csv   - 有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以重復多行形式出現<br />
-AB_ZJF-index.csv  - 合並的AB表，含正簡繁</br />
+
+
 
 csv, pl, txt 文件命名規則<br />
 字母 | 含義
@@ -196,3 +209,4 @@ J       | 簡體，簡化字，符合G表的字，及符合A_ZJF表（《中華�
 F       | 繁體，符合G表的字
 Y       | 異體，符合G表的字
 GEN     | 初始表格生成
+index   | 帶編碼
