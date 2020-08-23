@@ -1,0 +1,16 @@
+#+TITLE: How to use the program
+1. 第一步: 生成CSV文件
+   #+begin_src perl
+../perl/AB-G_ZJFY-full-index.pl
+   #+end_src
+2. 第二步：删除第一行
+   #+begin_src shell
+vim -e ../TXT/AB-G_ZJFY-full-index.csv <<-SCRIPT
+dd
+w
+SCRIPT
+   #+end_src
+3. 第三步：生成数据库. ./ab-g_zjfy.db
+   #+begin_src sheel
+   go run convert_csv_to_sqlite3_database.go
+   #+end_src
