@@ -11,39 +11,22 @@
 字體顏色 | 字數 | 含義
 ---------|-------|-----
 黑       |350    |《簡化字總表》第一表
-<div class="red">紅</div>| 132  |《簡化字總表》第二表
-<div class="green">綠</div>| 39  |《簡化字總表》附錄 習慣被當作簡體字 的異體字
-<font color='red'><u>紅</u></font>| 變動 | 臺灣字形或不作為大陸繁體的臺灣正體
+紅| 132  |《簡化字總表》第二表
+綠| 39  |《簡化字總表》附錄 習慣被當作簡體字 的異體字
+紅加下劃線| 變動 | 臺灣字形或不作為大陸繁體的臺灣正體
 
-
-<div class="text-white bg-blue mb-2">
-  .text-white on .bg-blue
-</div>
-<div class="bg-blue-light mb-2">
-  .text-gray-dark on .bg-blue-light
-</div>
-<div class="text-white bg-red mb-2">
-  .text-white on .bg-red
-</div>
-<div class="text-red bg-red-light mb-2">
-  .text-red on .bg-red-light
-</div>
-<div class="bg-green-light mb-2">
-  .text-gray-dark on .bg-green-light
-</div>
-<div class="bg-yellow mb-2">
-  .text-gray-dark on .bg-yellow
-</div>
-<div class="bg-yellow-light mb-2">
-  .text-gray-dark on .bg-yellow-light
-</div>
-<div class="text-white bg-purple mb-2">
-  .text-white on .bg-purple
-</div>
-<div class="text-white bg-gray-dark mb-2">
-  .text-white on .bg-gray-dark
-</div>
-<div class="bg-gray">
-  .text-gray-dark on .bg-gray
-</div>
-● 另加了別冊剎產喫沖廚湊盜兌戶奐黃雞減腳淨絕決殼況裡涼彔呂沒歿內弒
+具體的制作步驟
+1. 打開cheatsheet 工作表格，用Libre Calc或WPS都可以
+1. 複制「已合並前三表」
+1. 把額外頁中的「字」「拼音」二列複製粘貼到第2步中複製頁面的尾端
+1. 按拼音排序
+1. 複製「字」列
+1. 貼到WPS新文檔中，如果貼到Libre Write中，顏色就沒有了
+1. 貼入文檔後是個表格，選中表格後合並表格
+1. 複製表格中的文字，然後刪除表格
+1. 貼入上一步複製的文字
+1. 查找並替換「段落標記」，去除所有的段落標記
+1. 選中所有文字，字體設成「MS Song」
+1. 打開「cheatsheet WPS 2019 模版.docx」
+1. 選中新文檔中的所有字，字號設成20，貼入模版的第2頁和第3頁
+1. 選中新文檔中的所有字，字號設成26，貼入模版的第4頁，要先刪除第4頁和第5頁的所有字，否則第4頁的折線會移位或消失
