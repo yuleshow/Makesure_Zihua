@@ -179,19 +179,19 @@ AB-G_ZJFY-full-index.pl | AB_ZJF-index.csv<br />G_JFY-full-index.csv | AB-G_ZJFY
 
 文件名                          |文件屬性      |內容
 ------------------------------- |---------------------------|---------------------------
-ABG_ZJFY-final.csv              |               |本計劃的最終文件，包含了A表B表C表的所有文字    |
+ABG_ZJFY-final.csv              |                |本計劃的最終文件，包含了A表B表C表的所有文字    |
 AB-G_ZJFY-full-index.csv        |中間文件        |最終生成的表，用AB表作索引，包含可對應G表部分的全表   |     
-AB-G_ZJFY-full-extend-index.csv |中間文          件 |取代上表的，增加了如果AB表正字對應不到G表，則用正體對應G表的繁體或異體       |
+AB-G_ZJFY-full-extend-index.csv |中間文件        |取代上表的，增加了如果AB表正字對應不到G表，則用正體對應G表的繁體或異體       |
 AB_ZJF-index.csv                |         |合並的AB表，含正簡繁，帶編碼
 A-index.csv                     |         |用ORIGIN-A.csv生成的A表，帶編碼
 A_ZJF-index.csv                 |         |A表的正簡繁對照表，不含編碼
-A_ZJF-unidexed.csv              |         |A表的正簡繁對照表，含編碼
+A_ZJF-unidexed.csv              |中間文件         |A表的正簡繁對照表，含編碼
 B-index.csv                     |         |用ORIGIN-B.txt生成的B表，帶編碼
 B_ZJF-index.csv                 |         |一張（假）表，用自動繁簡轉換結果製成的B表正簡繁對照表
 G-index.csv                     |         |用ORIGIN-G.txt生成的G表，帶編碼
 G_JFY-full-index.csv            |         |G表8105字含繁體異體的帶編碼的表
 G_JFY-long-table.csv            |         |有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以單行形式出現
-G_JFY-table.csv                 |         |有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以重復多行形式出現
+G_JFY-table.csv                 |中間文件        |有繁體異體字的部分G表，不含沒有繁體異體的部分，一對多以重復多行形式出現
 ORIGIN-A.csv                    |原始文件 |原始的从ods另存為的A表
 ORIGIN-A_ZJF.txt                |原始文件 |複製自PDF的原文本，中華民國官方A表「正簡繁」對照表
 ORIGIN-B_J.csv                  |原始文件 |每行單字共6343行的用B表生成的簡體列表
