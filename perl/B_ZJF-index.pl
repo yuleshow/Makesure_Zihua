@@ -25,6 +25,8 @@ while (<INPUT_FILE>) {
 
 close (INPUT_FILE);
 
+
+
 my $input_file = "../TXT/ORIGIN-B_J.csv";
 
 open (INPUT_FILE, '<', $input_file);
@@ -187,6 +189,9 @@ $temp =~ s /齗/龂/g;
     $key="$head$i";
 
     $bJ_index{$key}=$b_J;
+
+    $bJ_number{$b_J}=$key;
+    
     # print $key." =>> ".$bJ_index{$key}."\n";
 
     # print "\$i=$i     \$head=$head   combination:$head$i\n";
@@ -196,6 +201,33 @@ $temp =~ s /齗/龂/g;
 }
 
 close (INPUT_FILE);
+
+
+my $input_file = "../TXT/G_JFY-table.csv";
+
+open (INPUT_FILE, '<', $input_file);
+my $i=1;
+
+while (<INPUT_FILE>) {
+    $temp = $_;
+    $temp =~ s /\r|\n//g;
+    ($G_number, $G_J, $G_F, $temp) = split (/:/, $temp);
+#    print "$G_F => $G_J\n";
+    $G_index{$G_F}=$G_J;
+
+    if ($bJ_index{$bJ_number{$G_F}} ne '')
+    {
+        $old_char = $bJ_index{$bJ_number{$G_F}};
+#    $bJ_index{$bJ_number{$G_F}}=$G_J;
+#    print "$bJ_number{$G_F} => $old_char -- $bJ_index{$bJ_number{$G_F}}\n";
+    }    
+}
+
+close (INPUT_FILE);
+
+
+
+
 
 
 my $output_file = "../TXT/B_ZJF-index.csv";

@@ -27,6 +27,8 @@ while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s /\r|\n//g;
     $temp =~ s /c[0-9]+//g;
+    $temp =~ s /a[0-9]+//g;
+        $temp =~ s /d[0-9]+//g;
     $temp =~ s /珊󠄁/珊/g;
 
     if ($temp ne '') {
