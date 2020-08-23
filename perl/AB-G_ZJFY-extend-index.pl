@@ -2,7 +2,7 @@
 
 #Input file:     ../TXT/AB_ZJF-index.csv
 #                ../TXT/G_JFY-full-index.csv
-#Output file:    ../TXT/AB-G_ZJFY-full-index.csv
+#Output file:    ../TXT/AB-G_ZJFY-extend-index.csv";
 
 
 use Encode;
@@ -47,7 +47,7 @@ while (<INPUT_FILE>) {
 
 close (INPUT_FILE);
 
-my $output_file = "../TXT/AB-G_ZJFY-full-extend-index.csv";
+my $output_file = "../TXT/AB-G_ZJFY-extend-index.csv";
 open (OUTPUT_FILE, '>', $output_file);
 
 # print OUTPUT_FILE "AB表編碼:正體字:簡體字:繁體字:簡正對應關係:AB表和G表對應原則:G表編碼:簡體字:繁體字:異體字:一對多附註\n";

@@ -9,5 +9,5 @@ perl G_JFY-GEN.pl
 perl G_JFY-long-GEN.pl
 perl G_JFY-full-index.pl
 perl AB-G_ZJFY-full-index.pl
-perl AB-G_ZJFY-full-extend-index.pl
+perl AB-G_ZJFY-extend-index.pl
 perl ABG_ZJFY-final.pl
