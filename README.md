@@ -177,9 +177,11 @@ G_JFY-full-index.pl | G_JFY-long-table.csv<br />G-index.csv | G_JFY-full-index.c
 AB-G_ZJFY-full-index.pl | AB_ZJF-index.csv<br />G_JFY-full-index.csv | AB-G_ZJFY-full-index.csv
 
 
-文件名                          |內容
+文件名                          |文件屬性 |內容
 ------------------------------- |---------------------
-AB-G_ZJFY-full-index.csv        |最終生成的表，用AB表作索引，包含可對應G表部分的全表
+ABG_ZJFY-final.csv              |               |本計劃的最終文件，包含了A表B表C表的所有文字，
+AB-G_ZJFY-full-index.csv        |中間文件 |最終生成的表，用AB表作索引，包含可對應G表部分的全表
+AB-G_ZJFY-full-extend-index.csv |中間文件 |取代上表的，增加了如果AB表正字對應不到G表，則用正體對應G表的繁體或異體
 AB_ZJF-index.csv                |合並的AB表，含正簡繁，帶編碼
 A-index.csv                     |用ORIGIN-A.csv生成的A表，帶編碼
 A_ZJF-index.csv                 |A表的正簡繁對照表，不含編碼
