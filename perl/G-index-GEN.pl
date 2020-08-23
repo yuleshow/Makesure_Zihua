@@ -27,6 +27,7 @@ while (<INPUT_FILE>) {
     $temp = $_;
     $temp =~ s /\r|\n//g;
     $temp =~ s /c[0-9]+//g;
+    $temp =~ s /珊󠄁/珊/g;
 
     if ($temp ne '') {
         ($g_number, $g_character) = split (/\ /, $temp);
