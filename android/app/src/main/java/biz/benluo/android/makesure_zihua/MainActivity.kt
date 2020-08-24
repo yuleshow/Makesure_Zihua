@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment());
+        }
     }
 
     private fun loadFragment(fragment: Fragment) {
