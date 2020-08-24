@@ -12,7 +12,7 @@ use utf8;
 use open ":std", ":encoding(UTF-8)";
 
 
-my $input_file = "../TXT/AB-G_ZJFY-full-extend-index.csv";
+my $input_file = "../TXT/AB-G_ZJFY-extend-index.csv";
 
 open (INPUT_FILE, '<', $input_file);
 my $i=1;
