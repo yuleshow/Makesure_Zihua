@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">Makesure_Zihua</string>
+    <string name="app_name">Makesure Zihua</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dictionary</string>
-    <string name="title_notifications">About</string>
+    <string name="title_dictionary">Dictionary</string>
+    <string name="title_about">About</string>
+    <string name="app_about">Makesure Zihua. \\n Android Version.</string>
+    <string name="zheng_ti">Zheng Ti</string>
+    <string name="jian_ti">Jian Ti</string>
+    <string name="fan_ti">Fan Ti</string>
+    <string name="yi_ti">Yi Ti</string>
 </resources>

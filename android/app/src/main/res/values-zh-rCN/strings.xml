@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">"梅玺阁字话，又名《包学包会写繁体》 "</string>
+    <string name="app_name">梅玺阁字话，又名《包学包会写繁体》</string>
     <string name="title_home">主页</string>
-    <string name="title_dashboard">字典</string>
-    <string name="title_notifications">关于</string>
+    <string name="title_dictionary">字典</string>
+    <string name="title_about">关于</string>
+    <string name="app_about">梅玺阁字话，又名《包学包会写繁体》。安卓版。</string>
+    <string name="zheng_ti">正体</string>
+    <string name="jian_ti">简体</string>
+    <string name="fan_ti">繁体</string>
+    <string name="yi_ti">异体</string>
 </resources>
