@@ -9,4 +9,8 @@
     <string name="jian_ti">简体</string>
     <string name="fan_ti">繁体</string>
     <string name="yi_ti">异体</string>
+    <string name="input_zheng_ti">请输入正体字</string>
+    <string name="input_jian_ti">请输入简体字</string>
+    <string name="input_fan_ti">请输入繁体字</string>
+    <string name="input_yi_ti">请输入异体字</string>
 </resources>

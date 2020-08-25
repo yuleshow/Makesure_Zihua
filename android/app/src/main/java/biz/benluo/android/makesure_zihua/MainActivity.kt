@@ -3,9 +3,9 @@ package biz.benluo.android.makesure_zihua
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import biz.benluo.android.makesure_zihua.ui.about.AboutFragment
-import biz.benluo.android.makesure_zihua.ui.dictionary.DictionaryFragment
-import biz.benluo.android.makesure_zihua.ui.home.HomeFragment
+import biz.benluo.android.makesure_zihua.ui.AboutFragment
+import biz.benluo.android.makesure_zihua.ui.DictionaryFragment
+import biz.benluo.android.makesure_zihua.ui.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         if (savedInstanceState == null) {
-            loadFragment(HomeFragment());
+            loadFragment(HomeFragment())
         }
     }
 

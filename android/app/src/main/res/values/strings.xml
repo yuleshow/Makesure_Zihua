@@ -8,4 +8,8 @@
     <string name="jian_ti">Jian Ti</string>
     <string name="fan_ti">Fan Ti</string>
     <string name="yi_ti">Yi Ti</string>
+    <string name="input_zheng_ti">Input Zheng Ti Character</string>
+    <string name="input_jian_ti">Input Jian Ti Character</string>
+    <string name="input_fan_ti">Input Fan Ti Character</string>
+    <string name="input_yi_ti">Input Yi Ti Character</string>
 </resources>

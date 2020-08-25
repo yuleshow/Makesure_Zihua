@@ -1,4 +1,4 @@
-package biz.benluo.android.makesure_zihua.ui.about
+package biz.benluo.android.makesure_zihua.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
