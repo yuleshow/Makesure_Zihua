@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import kotlinx.coroutines.CoroutineScope
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [Dict::class], version = 1, exportSchema = true)
+const val EXISTING_VERSION = 1
+
+@Database(entities = [Dict::class], version = EXISTING_VERSION + 1, exportSchema = true)
 abstract class DictionaryRoomDatabase : RoomDatabase() {
     abstract fun dictDao(): DictDao
 
@@ -14,25 +17,23 @@ abstract class DictionaryRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: DictionaryRoomDatabase? = null
 
-        fun getDatabase(context: Context, scope: CoroutineScope): DictionaryRoomDatabase {
+        fun getDatabase(context: Context): DictionaryRoomDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DictionaryRoomDatabase::class.java,
-                    "DictionaryDB"
+                    "dictionary.db"
                 )
                     .createFromAsset("databases/dictionary.db")
-                   // .fallbackToDestructiveMigration()
-                    //.addCallback(DictionaryRoomDatabaseCallback(scope))
+                    .addMigrations(object : Migration(EXISTING_VERSION, EXISTING_VERSION + 1) {
+                        override fun migrate(database: SupportSQLiteDatabase) {
+                            // no need do anything
+                        }
+                    })
                     .build()
                 INSTANCE = instance
                 instance
             }
-        }
-
-        private class DictionaryRoomDatabaseCallback(private val scope: CoroutineScope) :
-            RoomDatabase.Callback() {
-
         }
     }
 }

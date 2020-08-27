@@ -35,7 +35,7 @@ func main() {
 
 	// if there is no g_f, it is "". If there is no yiti, y will be ""
 	sqlStmt := `
-	create table dict (ab_code text not null primary key, z text, j tex, f text, jz_relation text, g_code text, g_j text, g_f text, y text);
+	create table dict (ab_code text not null primary key, z text, j text, f text, jz_relation text, g_code text, g_j text, g_f text, y text);
 	delete from dict;
 	`
 	_, err = db.Exec(sqlStmt)
