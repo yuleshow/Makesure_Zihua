@@ -46,3 +46,6 @@ http://tool.httpcn.com/Zi/BuShou.html
 
 通用规范汉字表
 https://zh.m.wikisource.org/zh-hans/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8
+
+含有某個字的漢字查詢
+https://www.qqxiuzi.cn/hanzi/hanyou/
