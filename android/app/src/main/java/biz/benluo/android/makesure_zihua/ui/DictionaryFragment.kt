@@ -14,8 +14,8 @@ import biz.benluo.android.makesure_zihua.R
 import kotlinx.android.synthetic.main.fragment_dictionary.view.*
 
 class DictionaryFragment : Fragment() {
-    private lateinit var db: DictionaryRoomDatabase
-    private lateinit var dictDao: DictDao
+//    private lateinit var db: DictionaryRoomDatabase
+//    private lateinit var dictDao: DictDao
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,18 +23,54 @@ class DictionaryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_dictionary, container, false)
-        db = DictionaryRoomDatabase.getDatabase(v.context)
-        dictDao = db.dictDao()
-        v.eTz.addTextChangedListener(object : TextWatcher {
+//        v.eTz.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable) {}
+//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+//                val db = DictionaryRoomDatabase.getDatabase(v.context)
+//                val dictDao = db.dictDao()
+//                val dicts = dictDao.getDictFromZ(s.toString())
+//                v.eTj.setText(dicts[0].j)
+//                v.eTf.setText(dicts[0].f)
+//                v.eTy.setText(dicts[0].y)
+//            }
+//        })
+        v.eTj.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                val dicts = dictDao.getDictFromZ(s.toString())
-                v.eTj.setText(dicts[0].j)
+                val db = DictionaryRoomDatabase.getDatabase(v.context)
+                val dictDao = db.dictDao()
+                val dicts = dictDao.getDictFromJ(s.toString())
+                v.eTz.setText(dicts[0].z)
                 v.eTf.setText(dicts[0].f)
                 v.eTy.setText(dicts[0].y)
             }
         })
+//        v.eTf.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable) {}
+//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+//                val db = DictionaryRoomDatabase.getDatabase(v.context)
+//                val dictDao = db.dictDao()
+//                val dicts = dictDao.getDictFromF(s.toString())
+//                v.eTz.setText(dicts[0].z)
+//                v.eTj.setText(dicts[0].j)
+//                v.eTy.setText(dicts[0].y)
+//            }
+//        })
+//        v.eTy.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable) {}
+//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+//                val db = DictionaryRoomDatabase.getDatabase(v.context)
+//                val dictDao = db.dictDao()
+//                val dicts = dictDao.getDictFromY(s.toString())
+//                v.eTz.setText(dicts[0].z)
+//                v.eTj.setText(dicts[0].j)
+//                v.eTf.setText(dicts[0].f)
+//            }
+//        })
         return v
     }
 }

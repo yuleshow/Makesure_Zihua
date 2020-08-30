@@ -30,6 +30,7 @@ abstract class DictionaryRoomDatabase : RoomDatabase() {
                             // no need do anything
                         }
                     })
+               //     .allowMainThreadQueries() // Dangerous and dirty TODO: change to async later
                     .build()
                 INSTANCE = instance
                 instance
