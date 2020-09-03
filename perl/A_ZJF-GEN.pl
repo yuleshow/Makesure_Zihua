@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# Covernt oneline multi characters file into multi lines single character, the input file has to be only one line
-# Also plus "B0000:" to one column
 # Input file:    ../TXT/ORIGIN-A_ZJF.txt
 # Output file:   ../TXT/A_ZJF-unidexed.csv
 
